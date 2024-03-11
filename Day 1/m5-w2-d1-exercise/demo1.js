@@ -7,9 +7,16 @@ class NameForm extends React.Component {
       
     }
     
-    // add handleChange here
+    // add handleChange here - execute method when something is changed
+    handleChange(event) {
+      this.setState({ value: event.target.value });
+    }
     
-    // add handleSubmit here
+    // add handleSubmit here - execute method when a form is submitted
+    handleSubmit(event) {
+      alert('A name was submitted: ' + this.state.value);
+      event.preventDefault();
+    }
     
   
     render() {
