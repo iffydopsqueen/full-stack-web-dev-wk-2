@@ -3,8 +3,9 @@ class NameForm extends React.Component {
       super(props);
       this.state = {value: ''};
       
-      //add handle
-      
+      //add handle - to handle both methods [handleChange, handleSubmit]
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
     
     // add handleChange here - execute method when something is changed
