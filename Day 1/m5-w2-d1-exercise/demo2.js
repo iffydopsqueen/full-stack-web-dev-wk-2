@@ -1,8 +1,10 @@
 class Reservation extends React.Component {
     constructor(props) {
       super(props);
+      // add default state for both fields 
       this.state = {
-        
+        isGoing: true,
+        numberOfGuests: 2
       };
   
       this.handleInputChange = this.handleInputChange.bind(this);
