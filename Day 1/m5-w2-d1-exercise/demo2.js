@@ -18,10 +18,19 @@ class Reservation extends React.Component {
         });
     }
   
+    // form adds multiple fields
     render() {
       return (
         <form>
-          
+          <label>
+            Is going: 
+            <input type="checkbox" name="isGoing" checked={this.state.isGoing} onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Number of guests:
+            <input type="number" name="numberOfGuests" value={this.state.numberOfGuests} onChange={this.handleInputChange} />
+          </label>
         </form>
       );
     }
