@@ -66,4 +66,7 @@ h1 {
     margin-left: 5px;
     font-size: 12px;
 }
-  
+
+.cart {
+    border-bottom: 1px solid #ccc;
+}
