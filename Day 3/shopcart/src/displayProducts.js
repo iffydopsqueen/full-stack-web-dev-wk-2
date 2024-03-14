@@ -22,7 +22,9 @@ const DisplayProducts = ({ products, handleValueChange }) => {
                     <div className="product-content">
                         <img src={product.image} alt={product.desc} onClick={() => openModal(product)} />
                         <div className="product-value">
-                            <input type="text" value={product.value} onChange={(e) => handleValueChange(product.id, e)} />
+                            <button onClick={() => handleValueChange(product.id, { target: { value: product.value - 1 }})}>-</button>
+                            <button onClick={() => handleValueChange(product.id, { target: { value: product.value + 1 }})}>+</button>
+                            <input type="text" value={product.value} readOnly/>    {/* disabled the input field */}
                             <span> quantity</span>
                         </div>
                     </div>
