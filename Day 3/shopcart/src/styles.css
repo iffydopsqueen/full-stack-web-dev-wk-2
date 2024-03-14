@@ -1,0 +1,64 @@
+.App-header {
+    background-color: #7df9ff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 15px;
+}
+  
+.cart-icon {
+    font-size: 15px;
+}
+  
+.product-item {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+  
+.product-description {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+  
+.product-content {
+    display: flex;
+    align-items: center;
+}
+  
+.product-content img {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.product-description, 
+.product-content {
+    margin-left: 40px;
+}
+
+.product-value input {
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+  
+.product-value {
+    display: flex;
+    align-items: center;
+}
+  
+.product-value span {
+    margin-left: 5px;
+    font-size: 12px;
+}
+  
