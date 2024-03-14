@@ -1,40 +1,18 @@
 // Required Library Components 
 import "./styles.css";
 import React, { Component } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./navbar";
+import DisplayProducts from "./displayProducts";
+import productsData from "./products";
+import Cart from "./cart";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [
-        {
-          id: 1,
-          image: "./products/cologne.jpg",
-          desc: "Unisex Cologne",
-          value: 0
-        },
-        {
-          id: 2,
-          image: "./products/iwatch.jpg",
-          desc: "Apple iWatch",
-          value: 0
-        },
-        {
-          id: 3,
-          image: "./products/mug.jpg",
-          desc: "Unique Mug",
-          value: 0
-        },
-        {
-          id: 4,
-          image: "./products/wallet.jpg",
-          desc: "Mens Wallet",
-          value: 0
-        }
-      ],
+      products: productsData,
       totalQuantity: 0 // Initialize total quantity - keep track of the total quantity
     };
   }
@@ -72,35 +50,29 @@ class App extends Component {
     const { products, totalQuantity } = this.state;
 
     return (
-      <div className="App">
-        <header className="App-header"> 
-        <h1>Shop to React</h1>
-        <div className="cart-icon">
-          <FontAwesomeIcon icon={faShoppingCart} /> 
-          <span> {totalQuantity}</span>    {/* Display total quantity */}
-          <span> items</span>
+      <Router>
+        <div className="App">
+          <Navbar totalQuantity={totalQuantity} />
+          <Routes>
+            <Route
+              exact path="/"
+              element={
+                <DisplayProducts
+                  products={products}
+                  handleValueChange={this.handleValueChange}
+                />
+              } 
+            />
+            {/* Add route for Cart component */}
+            <Route path="/cart" element={
+              <Cart
+                products={products} 
+              />
+            } 
+            />
+          </Routes>
         </div>
-        </header>
-        <div className="product-list">
-          {products.map((product) => (
-            <div key={product.id} className="product-item">
-              <div className="product-description">{product.desc}</div>
-              <div className="product-content">
-                <img src={product.image} alt={product.desc} />
-                <div className="product-value">
-                  <input
-                      type="text"
-                      value={product.value}
-                      onChange={(e) => this.handleValueChange(product.id, e)} />
-                      {/* The 'onChange' event listener is attached to the input field to call the 
-                      'handleValueChange' function whenever the input value changes */}
-                  <span> quantity</span>
-                </div>
-              </div>
-            </div>
-          ))}
-          </div>
-      </div>
+      </Router>
     );
   }
 }
