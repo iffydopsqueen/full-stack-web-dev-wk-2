@@ -1,5 +1,10 @@
+#root {
+    border: 1px solid #ccc;
+}
+
 .App-header {
-    background-color: #7df9ff;
+    background-color: #00b4d8;
+    color: #fff;
     padding: 20px;
     display: flex;
     justify-content: space-between;
