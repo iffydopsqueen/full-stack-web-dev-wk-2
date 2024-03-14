@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import ProductModal from "./productModal";
+import { Modal } from "react-bootstrap";
 
 const DisplayProducts = ({ products, handleValueChange }) => {
-    const [activeProduct, setActiveProduct] = useState(null);
+    const [show, setShow] = useState(false);
+    const [showImge, setShowImge] = useState({});
 
-    const openModal = (product) => {
-        setActiveProduct(product);
-    };
-
-    const closeModal = () => {
-        setActiveProduct(null);
+    const handleClose = () => setShow(false);
+    const handleShow = (product) => {
+        setShow(true);
+        setShowImge(product);
     };
 
     return (
@@ -20,7 +19,8 @@ const DisplayProducts = ({ products, handleValueChange }) => {
                         {product.desc}
                     </div>
                     <div className="product-content">
-                        <img src={product.image} alt={product.desc} onClick={() => openModal(product)} />
+                        {/* The event attribute 'handleShow' calls the show handler */}
+                        <img src={product.image} alt={product.desc} onClick={() => handleShow(product)} />
                         <div className="product-value">
                             <button onClick={() => handleValueChange(product.id, { target: { value: product.value - 1 }})}>-</button>
                             <button onClick={() => handleValueChange(product.id, { target: { value: product.value + 1 }})}>+</button>
@@ -30,11 +30,21 @@ const DisplayProducts = ({ products, handleValueChange }) => {
                     </div>
                 </div>
             ))}
-            {activeProduct && 
-                <ProductModal 
-                    product={activeProduct} 
-                    closeModal={closeModal} 
-                />}
+            {/* Creating the 'modal' component */}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{showImge.desc}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <img 
+                        src={showImge.image} 
+                        width="350"
+                        alt={showImge.desc}
+                        className="mx-5"
+                    />
+                    <p><span className="text-dark">Ratings:</span> {showImge.ratings}/5</p>
+                </Modal.Body>
+            </Modal>
         </div>
     );
 };
