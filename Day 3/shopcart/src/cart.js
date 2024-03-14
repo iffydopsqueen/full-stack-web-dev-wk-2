@@ -3,7 +3,7 @@ import React from "react";
 const Cart = ({ products }) => {
     return (
         <div className="cart">
-            <h2>Cart</h2>
+            <h2>Your Cart Items</h2>
             <ul>
                 {products.map((product) => (
                     <li key={product.id}>

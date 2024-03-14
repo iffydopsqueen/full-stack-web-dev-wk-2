@@ -32,11 +32,15 @@ class App extends Component {
   handleValueChange = (productId, e) => {
     const { value } = e.target;
     const { products } = this.state;
+
+    let updatedValue = parseInt(value) || 0;
+    // Ensure value doesn't go below 0
+    updatedValue = Math.max(0, updatedValue);
     
     // Updates the state with the new value entered by the user
     const updatedProducts = products.map(product => {
       if (product.id === productId) {
-        return { ...product, value: parseInt(value) || 0 }; // Ensure value is a number
+        return { ...product, value: updatedValue }; // Ensure value is a number
       }
       return product;
     });
