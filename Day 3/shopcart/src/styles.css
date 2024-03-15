@@ -58,11 +58,16 @@
 .product-value {
     display: flex;
     align-items: center;
+    position: relative;
 }
   
 .product-value span {
     margin-left: 5px;
     font-size: 12px;
+    position: absolute;
+    top: -20px;
+    left: 105px;
+
 }
 
 .cart-heading {
@@ -81,7 +86,7 @@
 }
 
 .cart-item-image {
-    width: 100px;
+    width: 90px;
     margin-right: 20px;
     margin-left: 10px;
     margin-top: 20px;
@@ -89,13 +94,13 @@
 }
 
 .cart-item-description {
-    font-size: 12px;
+    font-size: 11px;
     margin-left: 20px;
     margin-bottom: 10px;
 }
 
 .cart-item-quantity {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     position: absolute;
     right: 0;

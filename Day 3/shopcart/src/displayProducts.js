@@ -31,7 +31,7 @@ const DisplayProducts = ({ products, handleValueChange }) => {
                                 <BsPlusCircleFill />
                             </button>
                             <input type="text" value={product.value} readOnly/>    {/* disabled the input field */}
-                            <span> quantity</span>
+                            <span> Quantity</span>
                         </div>
                     </div>
                 </div>
