@@ -7,7 +7,16 @@ const Navbar = ({ totalQuantity }) => {
     return (
         <header className="App-header">
             <Link to="/" className="nav-link">
-                <h1>Shop 2 React</h1>
+                <div className="left-nav">
+                    <h1 className="text-heading">Shop 2 </h1>
+                    <div className="logo-container">
+                        {/* Add the circle div with the "R" inside */}
+                        <div className="circle">
+                            <h1 className="just-R">R</h1>
+                        </div>
+                    </div>
+                    <h1>eact</h1>
+                </div>
             </Link>
             <div className="cart-icon">
                 <Link to="/cart" className="nav-link">

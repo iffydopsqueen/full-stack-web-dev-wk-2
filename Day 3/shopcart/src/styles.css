@@ -7,8 +7,9 @@
     align-items: center;
 }
 
-h1 {
+.text-heading {
     margin-left: 15px;
+    margin-right: 8px;
 }
   
 .cart-icon {
@@ -115,4 +116,31 @@ h1 {
     display: flex; /* Add flex display */
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
+}
+
+/* Styling the 'R' in React on the nav bar */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Add styles for the circle */
+.circle {
+    width: 40px; /* Adjust circle size as needed */
+    height: 40px; /* Adjust circle size as needed */
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.just-R {
+    color: #00b4d8; /* Blue color for the "R" */
+    font-weight: bolder;
+    margin-top: 5px;
+}
+
+.left-nav {
+    display: flex;
 }
