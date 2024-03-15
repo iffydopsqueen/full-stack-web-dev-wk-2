@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+// Importing Bootstrap icons
+import { BsDashCircleFill, BsPlusCircleFill } from "react-icons/bs";
 
 const DisplayProducts = ({ products, handleValueChange }) => {
     const [show, setShow] = useState(false);
@@ -22,8 +24,12 @@ const DisplayProducts = ({ products, handleValueChange }) => {
                         {/* The event attribute 'handleShow' calls the show handler */}
                         <img src={product.image} alt={product.desc} onClick={() => handleShow(product)} />
                         <div className="product-value">
-                            <button onClick={() => handleValueChange(product.id, { target: { value: product.value - 1 }})}>-</button>
-                            <button onClick={() => handleValueChange(product.id, { target: { value: product.value + 1 }})}>+</button>
+                            <button onClick={() => handleValueChange(product.id, { target: { value: product.value - 1 }})}>
+                                <BsDashCircleFill />
+                            </button>
+                            <button onClick={() => handleValueChange(product.id, { target: { value: product.value + 1 }})}>
+                                <BsPlusCircleFill />
+                            </button>
                             <input type="text" value={product.value} readOnly/>    {/* disabled the input field */}
                             <span> quantity</span>
                         </div>

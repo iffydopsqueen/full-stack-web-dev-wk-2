@@ -25,7 +25,7 @@ h1 {
   
 .product-description {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
   
@@ -47,10 +47,11 @@ h1 {
 .product-value input {
     border: 1px solid #ccc;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     width: 30px;
     height: 30px;
     margin-right: 5px;
+    margin-left: 20px;
 }
   
 .product-value {
@@ -98,5 +99,20 @@ h1 {
     position: absolute;
     right: 0;
     top: 40%;
-    left: 25%;
+    left: 15%;
+}
+
+/* Styling the 'Add' & 'Subtract' button */
+.product-value button {
+    background-color: #606060;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex; /* Add flex display */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
 }
